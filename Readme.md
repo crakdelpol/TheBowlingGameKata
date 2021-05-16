@@ -1,4 +1,4 @@
-#BowlingGame
+# BowlingGame
 
 Write a program that write out scoring in bowling game 
 
