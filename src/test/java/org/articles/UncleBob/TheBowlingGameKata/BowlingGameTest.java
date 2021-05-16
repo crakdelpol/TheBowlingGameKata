@@ -11,9 +11,12 @@ public class BowlingGameTest {
     private Game game;
 
     private class Game {
-        public void roll(int pins){}
+        private int score = 0;
+        public void roll(int pins){
+            score = score + pins;
+        }
         public Integer score(){
-            return null;
+            return score;
         }
     }
 
@@ -29,8 +32,14 @@ public class BowlingGameTest {
         for (Integer integer : pillsDown) {
             game.roll(integer);
         }
-        assertEquals(game.score(), 133);
+        assertEquals(133, game.score());
     }
 
-
+    @Test
+    void sumOfPinKnockedDown() {
+        for (int i = 0; i < 20; i++) {
+            game.roll(1);
+        }
+        assertEquals(20, game.score());
+    }
 }
